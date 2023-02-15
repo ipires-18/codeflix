@@ -3,13 +3,18 @@ import { Header } from './components/Header';
 import { Layout } from './components/Layout';
 import { appTheme } from './config/theme';
 import { Routes, Route } from 'react-router-dom';
+import { ListCategory } from './features/categories/ListCategory';
+import { CreateCategory } from './features/categories/CreateCategory';
+import { EditCategory } from './features/categories/EditCategory';
+import { Typography } from '@mui/material';
 
-export const Home = (): JSX.Element => {
-  return <div>Home</div>;
-};
-
-export const About = (): JSX.Element => {
-  return <div>About</div>;
+export const NotFound = (): JSX.Element => {
+  return (
+    <Box>
+      <Typography variant="h1">404</Typography>
+      <Typography variant="subtitle1">Page not found</Typography>
+    </Box>
+  );
 };
 
 function App(): JSX.Element {
@@ -21,10 +26,13 @@ function App(): JSX.Element {
       >
         <Header />
         <Layout>
-          <h1>Olá mundo</h1>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/" element={<ListCategory />} />
+            <Route path="/categories" element={<ListCategory />} />
+            <Route path="/categories/create" element={<CreateCategory />} />
+            <Route path="/categories/edit/:id" element={<EditCategory />} />
+
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </Box>
