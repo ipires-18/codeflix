@@ -1,0 +1,53 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "standard-with-typescript",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": [
+        "react",
+        "react-hooks",
+        "prettier"
+    ],
+    "rules": {
+      "dot-notation": "off",
+      "react-hooks/rules-of-hooks": "error",
+	    "react-hooks/exhaustive-deps": "warn",
+	    "react/jsx-filename-extension": [
+	      1,
+	      {
+	        "extensions": [
+	          ".tsx"
+	        ]
+	      }
+	    ],
+	    "import/extensions": [
+	      "error",
+	      "ignorePackages",
+	      {
+	        "ts": "never",
+	        "tsx": "never"
+	      }
+	    ],
+	    "no-use-before-define": "off",
+	    "@typescript-eslint/no-use-before-define": [
+	      "error"
+	    ],
+	    "react/react-in-jsx-scope": "off",
+      "prettier/prettier": "error",
+      "@typescript-eslint/no-non-null-assertion": "off"
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    },
+    "parserOptions": {
+      "project":"./tsconfig.json"
+    }
+}
