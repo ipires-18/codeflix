@@ -3,10 +3,11 @@ import {
   type ThunkAction,
   type Action,
 } from '@reduxjs/toolkit';
+import categoriesReducer from '../features/categories/categoriesSlice';
 
 export const store = configureStore({
   reducer: {
-    // counter:
+    categories: categoriesReducer,
   },
 });
 
